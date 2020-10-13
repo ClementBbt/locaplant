@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>All our plants</h1>
+  <ul>
+  <% @plants.each do |plant| %>
+    <li><%= plant.name %></li>
+  <% end %>
+  </ul>
+</div>

@@ -1,6 +1,8 @@
-<h1>Locaplant</h1>
-<%= user_signed_in? ? "loggué" : "Pas loggué" %>
-<% if user_signed_in? %>
-<%= current_user.email %>
-<% end %>
+<div class="container">
+  <h1>Locaplant</h1>
+  <%= user_signed_in? ? "loggué" : "Pas loggué" %>
+  <% if user_signed_in? %>
+  <%= current_user.email %>
+  <% end %>
+</div>
 
