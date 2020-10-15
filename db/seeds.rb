@@ -11,7 +11,7 @@ puts "Cleaning database..."
 User.destroy_all
 
 puts "Creating users..."
-jean_eymard = { first_name: "Jean"last_name: "Eymard" email: "jean.eymard@gmail.com" address: "41 rue popincourt, 75011, Paris" }
+jean_eymard = { first_name: "Jean" last_name: "Eymard" email: "jean.eymard@gmail.com" address: "41 rue popincourt, 75011, Paris" }
 anne_héantie =  { first_name: "Anne" last_name: "Héantie" email: "anne.héantie@gmail.com" address: "85 rue des Pyrénées, 75020, Paris" }
 
 [ jean_eymard, anne_héantie ].each do |attributes|
