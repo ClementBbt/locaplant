@@ -9,8 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @booking.user = @user
+    @booking.user = current_user
     @plant = Plant.find(params[:plant_id])
     @booking = Booking.new(booking_params)
     @booking.plant = @plant
