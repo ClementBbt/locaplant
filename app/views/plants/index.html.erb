@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h1>All our plants</h1>
   <ul>
   <% @plants.each do |plant| %>
@@ -6,4 +6,45 @@
 
   <% end %>
   </ul>
+</div> -->
+
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1521334884684-d80222895322?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);>
+  <div class="container">
+    <h1>Toutes nos plantes</h1>
+    <p>Retrouvez facilement les plantes proches de chez vous</p>
+  </div>
+</div>
+
+<div class="container">
+  <center> <h2>Plantes</h2> </center>
+  <div class="cards">
+    <% @plants.each do |plant| %>
+
+      <a href= <%= "plants/#{plant.id}" %> >
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)">
+          <%= plant.name %>
+        </div>
+      </a>
+
+    <% end %>
+
+  </div>
+</div>
+
+
+<div class="card-plant">
+  <% @plants.each do |plant| %>
+  <a href= <%= "plants/#{plant.id}" %> >
+  <img class="card-plant-banner" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-plant-infos">
+    <div>
+      <h2><%= plant.name %></h2>
+      <p><%= plant.description %></p>
+    </div>
+    <h3 class="card-trip-pricing"><%= plant.price_per_day %></h3>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+  <% end %>
 </div>
