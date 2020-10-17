@@ -5,6 +5,7 @@
         <%= f.input :name, label: "Votre plante" %>
         <%= f.input :description, label: "Description" %>
         <%= f.input :price_per_day, input_html: { min: '0' }, label: "Prix/jour"  %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit class: "myButton", label: "Validez" %>
       <% end %>
     </div>
