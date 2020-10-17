@@ -22,6 +22,11 @@
   margin: 0;
 }
 
+.card-plant a {
+  text-decoration: none;
+  color: black;
+}
+
 
 .card-plant .card-plant-infos {
   padding: 16px;
@@ -36,4 +41,22 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.container-card-plant {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .container-card-plant {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .container-card-plant {
+    grid-template-columns: 1fr;
+  }
 }
