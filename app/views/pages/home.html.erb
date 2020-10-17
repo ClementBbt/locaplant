@@ -1,8 +1,32 @@
-<div class="container">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1521334884684-d80222895322?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80)";>
   <h1>Locaplant</h1>
-  <%= user_signed_in? ? "loggué" : "Pas loggué" %>
-  <% if user_signed_in? %>
-  <%= current_user.email %>
-  <% end %>
 </div>
 
+
+<!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1521334884684-d80222895322?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80)";>
+  <div class="container">
+    <h1>Toutes nos plantes</h1>
+    <p>Retrouvez facilement les plantes proches de chez vous</p>
+  </div>
+</div> -->
+
+<div class="container">
+  <p>Retrouvez facilement les plantes proches de chez vous</p>
+  <div class="container-card-plant">
+    <% @plants.each do |plant| %>
+      <div class="card-plant">
+        <a href= <%= "plants/#{plant.id}" %> >
+          <img class="card-plant-banner" src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" />
+          <div class="card-plant-infos">
+            <div>
+              <h2><%= plant.name %></h2>
+              <p><%= plant.description %></p>
+            </div>
+            <h3 class="card-trip-pricing"><%= plant.price_per_day%><%= "€/jour"%></h3>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
