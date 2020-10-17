@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container center_div">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <%= simple_form_for @plant do |f| %>
@@ -6,7 +6,7 @@
         <%= f.input :description, label: "Description" %>
         <%= f.input :price_per_day, input_html: { min: '0' }, label: "Prix/jour"  %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit class: "myButton", label: "Validez" %>
+        <%= f.submit class: "myButton w-100", label: "Validez" %>
       <% end %>
     </div>
   </div>
