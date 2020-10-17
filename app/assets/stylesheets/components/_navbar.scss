@@ -8,5 +8,28 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 120px;
+}
+
+.nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+    color: #136a55;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #aac4b5;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #136a55;
+}
+
+
+.dropdown-item {
+    color: #136a55;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #aac4b5;
 }
