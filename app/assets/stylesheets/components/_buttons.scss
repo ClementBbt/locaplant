@@ -7,7 +7,6 @@
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
-  font-family:Monserrat;
   font-size:16px;
   padding:16px 31px;
   text-decoration:none;
@@ -15,8 +14,14 @@
 }
 .myButton:hover {
   background-color:#01260D;
+  text-decoration: none;
+  color: white;
 }
 .myButton:active {
   position:relative;
   top:1px;
+}
+
+.myButton.checkout {
+  text-align: center;
 }
