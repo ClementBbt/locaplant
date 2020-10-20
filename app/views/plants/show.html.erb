@@ -8,11 +8,11 @@
         <p class="lighter"> <%= @plant.description %> </p>
       </div>
       <div class="col-md-4">
-       <% if plant.photo.attached? %>
-              <%= cl_image_tag plant.photo.key %>
-            <% else %>
-              <img src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" />
-            <% end %>
+        <% if @plant.photo.attached? %>
+          <%= cl_image_tag @plant.photo.key %>
+        <% else %>
+        <img class="w-100 rounded" src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" />
+        <% end %>
       </div>
     </div>
   </div>
