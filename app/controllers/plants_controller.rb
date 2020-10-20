@@ -38,7 +38,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :description, :price_per_day, :category, :tag)
+    params.require(:plant).permit(:name, :description, :price_per_day, :category, :tag, :photo)
   end
 
   def find_plant
