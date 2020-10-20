@@ -27,7 +27,8 @@ class PlantsController < ApplicationController
   end
 
   def update
-     @plant.update(plant_params)
+    @plant.update(plant_params)
+    redirect_to plant_path(@plant)
   end
 
   def destroy
