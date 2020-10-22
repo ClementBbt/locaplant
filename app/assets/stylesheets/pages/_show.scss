@@ -6,6 +6,65 @@ h3 {
   font-weight: lighter;
 }
 
-.address {
+.ttc {
+  text-align: center;
+  font-size: 14px;
+}
+
+// Fav icon
+
+.fa {
   color: #aac4b5;
+}
+
+
+// Sweet alert style
+
+#sweet-alert {
+  text-decoration: none;
+  border: none;
+  background-color: #fff;
+}
+
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #136A55;
+  font-size: 12px;
+  color: #fff;
+}
+
+.swal-button--confirm {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #aac4b5;
+  font-size: 12px;
+}
+
+.swal-button--confirm:hover {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #b3c6bc;
+  font-size: 12px;
+}
+
+.swal-footer {
+  text-align: center;
+}
+
+.swal-icon--warning {
+  border-color: #aac4b5 !important;
+}
+
+.swal-icon--warning__body, .swal-icon--warning__dot {
+    background-color: #aac4b5;
+}
+
+.swal-button--danger:not([disabled]):hover {
+    background-color: #e8e8e8;
+    color: #aac4b5;
+}
+
+.swal-button--cancel:not([disabled]):hover {
+    color: #136A55;
 }
