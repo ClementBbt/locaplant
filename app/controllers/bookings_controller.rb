@@ -9,9 +9,9 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     @plant = Plant.find(params[:plant_id])
-    @booking = Booking.new(booking_params)
     @booking.plant = @plant
     if @booking.save
       redirect_to bookings_path

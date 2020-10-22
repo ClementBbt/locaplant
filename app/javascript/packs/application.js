@@ -32,3 +32,37 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+// Mapbox
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
+
+// Sweet Alert
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert', {
+  title: "Voulez-vous vraiment supprimer cette plante ?",
+  text: "Toute suppression est définitive",
+  icon: "warning",
+  iconColor: "#aac4b5",
+  buttons: ["Surtout pas !", "Sans regret :)"],
+  dangerMode: true,
+  className: "",
+  closeOnClickOutside: true
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
+
+// Flatpickr
+
+import "../plugins/flatpickr"
+
+

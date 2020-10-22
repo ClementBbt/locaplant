@@ -7,6 +7,8 @@ class PlantsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @marker = [{lat: @plant.user.latitude, lng: @plant.user.longitude, image_url: helpers.asset_url('marker_locaplant.png')}]
   end
 
   def new
