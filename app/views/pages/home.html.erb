@@ -34,36 +34,33 @@
 </div>
 
 <!-- 3 DERNIERES PLANTES SAUVEES DANS LA DB -->
-<div class="container">
-  <h3 class="mt-2 mb-2 text-center">Retrouvez facilement les plantes proches de chez vous</h3>
-  <div class="container-card-plant-home">
-    <% @plants.last(3).each do |plant| %>
-      <%= link_to plant_path(plant) do %>
-        <div class="card-plant-home">
-          <% if plant.photo.attached? %>
-            <%= cl_image_tag plant.photo.key %>
-          <% else %>
-            <img class="card-plant-home-banner" src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" />
-          <% end %>
-          <div class="card-plant-home-infos">
-            <div>
-              <h2><%= plant.name %></h2>
-              <p><%= plant.description %></p>
-            </div>
-            <div class="d-flex justify-content-end">
-              <h3 class="card-plant-home-pricing"><%= plant.price_per_day%><%= "€/jour"%></h3>
-              <img src="https://kitt.lewagon.com/placeholder/users/ClementBbt" class="card-trip-user avatar-bordered" />
+<div class="container-home">
+  <div class="container">
+    <h2 class="mt-2 mb-2 text-center">Découvrez les dernières arrivées !</h2>
+    <div class="container-card-plant-home">
+      <% @plants.last(3).each do |plant| %>
+        <%= link_to plant_path(plant) do %>
+          <div class="card-plant-home">
+            <% if plant.photo.attached? %>
+              <%= cl_image_tag plant.photo.key %>
+            <% else %>
+              <img class="card-plant-home-banner" src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" />
+            <% end %>
+            <div class="card-plant-home-infos">
+              <div>
+                <h3><%= plant.name.truncate(25) %></h3>
+                <p><%= plant.description.truncate(90) %></p>
+              </div>
+              <div class="d-flex justify-content-end">
+                <h3 class="card-plant-home-pricing"><%= plant.price_per_day%><%= "€/jour"%></h3>
+                <img src="https://kitt.lewagon.com/placeholder/users/ClementBbt" class="card-trip-user avatar-bordered" />
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+    <!-- VOIR PLUS -->
+    <a href="#" class="myButton w-100">Voir plus</a>
   </div>
-  <a href="#" class="myButton checkout w-60">Voir plus</a>
 </div>
-
-<!-- TEST TEXTE QUI BOUGE COMME SUR https://mysterious-inlet-29620.herokuapp.com/ -->
-<!-- <p>
-  <span id="banner-typed-text">Réservez blablabla à Paris</span>
-  <span class="typed-cursor">|</span>
-</p> -->
