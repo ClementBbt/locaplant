@@ -1,3 +1,27 @@
+.container-home {
+  background: #136A55;
+}
+
+.container-home h2 {
+  color: #ffffff;
+  padding: 16px;
+}
+
+.container-home h3 {
+  font-size: 22px;
+  margin-top: 8px;
+}
+
+.container-home .myButton {
+  text-align: center;
+  width: 50px;
+  background-color: #ffffff;
+  color: #01260D;
+  text-shadow: none;
+  border:1px solid #aac4b5;
+  margin: 16px;
+}
+
 .card-plant-home {
   overflow: hidden;
   background: white;
@@ -19,7 +43,7 @@
 .card-plant-home p {
   font-size: 12px;
   opacity: .7;
-  margin: 0;
+  margin-bottom: 12px;
 }
 
 .card-plant-home {
@@ -27,20 +51,26 @@
   color: black;
 }
 
-.container-card-plant-home:hover {
-  text-decoration: none !important;
-  color: red;
-}
-
 .card-plant-home .card-plant-home-infos {
   padding: 16px;
 }
 
-.card-plant-home-infos .card-plant-home-user {
+.card-plant-home-infos {
+  position: relative;
+}
+
+.card-trip-user {
   position: absolute;
-  right: 16px;
   top: -20px;
-  width: 40px;
+  right: 16px;
+}
+
+.card-plant-home-pricing {
+  margin: 0px;
+}
+
+.container-card-plant-home a:hover {
+  text-decoration: none;
 }
 
 .container-card-plant-home {
