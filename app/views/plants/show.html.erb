@@ -1,3 +1,4 @@
+<!-- Page top -->
 
 <div class="bg-white">
   <div class="container p-3">
@@ -27,6 +28,8 @@
           <img class="w-100 rounded" src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" />
           <% end %>
 
+<!-- Map & Form -->
+
       </div>
     </div>
   </div>
@@ -49,7 +52,8 @@
           <%= simple_form_for([ @plant, @booking ], remote: true) do |f| %>
             <%= f.input :start_date, label: "Début", as: :string, required: true, input_html: {class: "datepicker"} %>
             <%= f.input :end_date, label: "Fin", as: :string, required: true, input_html: {class: "datepicker"} %>
-            <%= f.button :submit, "Je réserve !", class: "myButton checkout w-100"  %>
+            <button id="sweet-alert2" class= "myButton checkout w-100">Je réserve !</button>
+            <%= f.button :submit, class: "d-none", id: "booking-link"  %>
           <% end %>
         </div>
         <div class="d-flex justify-content-between pt-3 border-top">

@@ -3,7 +3,31 @@ class PlantsController < ApplicationController
 
 
   def index
-    @plants = Plant.all
+    if params[:query].present?
+      @users = User.near("#{params[:query]}", 2)
+      @search = @users.map do |user|
+        user.plants
+      end
+      @plants = @search.flatten
+      @markers = @plants.map do |plant|
+        {
+          lat: plant.user.latitude,
+          lng: plant.user.longitude,
+          image_url: helpers.asset_url('marker_locaplant.png'),
+          infoWindow: render_to_string(partial: "info_window", locals: { plant: plant })
+        }
+      end
+    else
+      @plants = Plant.all
+      @markers = @plants.map do |plant|
+        {
+          lat: plant.user.latitude,
+          lng: plant.user.longitude,
+          image_url: helpers.asset_url('marker_locaplant.png'),
+          infoWindow: render_to_string(partial: "info_window", locals: { plant: plant })
+        }
+      end
+    end
   end
 
   def show
