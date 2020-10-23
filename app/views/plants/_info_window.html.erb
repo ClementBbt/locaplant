@@ -1,0 +1,4 @@
+<%= link_to plant_path(plant), class: "link" do %>
+  <h2><%= plant.name %></h2>
+  <p>Plante proposée par <%= plant.user.first_name %></p>
+  <% end %>

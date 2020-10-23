@@ -24,28 +24,33 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "../plugins/flatpickr";
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
-
-// Mapbox
-
+// Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initSweetalert } from '../plugins/init_sweetalert';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
+// Events
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-})
-
-// Sweet Alert
-
-import { initSweetalert } from '../plugins/init_sweetalert';
-
-initSweetalert('#sweet-alert', {
+  initAutocomplete();
+  initSweetalert('#sweet-alert2', {
+  title: "Réservation confirmée",
+  text: "Votre plante arrivera bientôt chez vous !",
+  icon: "success",
+  iconColor: "#aac4b5",
+  button: "Top !",
+  closeOnClickOutside: false
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#booking-link');
+    link.click();
+  }
+});
+  initSweetalert('#sweet-alert', {
   title: "Voulez-vous vraiment supprimer cette plante ?",
   text: "Toute suppression est définitive",
   icon: "warning",
@@ -60,9 +65,6 @@ initSweetalert('#sweet-alert', {
     link.click();
   }
 });
-
-// Flatpickr
-
-import "../plugins/flatpickr"
+})
 
 
