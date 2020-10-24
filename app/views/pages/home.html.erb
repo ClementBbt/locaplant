@@ -43,7 +43,7 @@
         <%= link_to plant_path(plant) do %>
           <div class="card-plant-home">
             <% if plant.photo.attached? %>
-              <%= cl_image_tag plant.photo.key %>
+              <%= cl_image_tag plant.photo.key, class: "w-100 rounded" %>
             <% else %>
               <img class="card-plant-home-banner" src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" />
             <% end %>
