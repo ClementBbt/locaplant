@@ -42,6 +42,13 @@
   margin-top: 8px;
 }
 
+.card-bookings a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #136A55;
+  font-weight: bold;
+}
+
 .card-bookings .card-bookings-infos {
   padding: 16px;
 }
@@ -52,3 +59,18 @@
   font-weight: 700;
   opacity: 1 !important;
 }
+
+.container-card-bookings a:hover {
+  text-decoration: none;
+}
+
+.card-bookings-infos {
+  color: #136A55;
+}
+
+.card-bookings-infos-titre {
+  color: #136A55;
+  font-weight: bold;
+}
+
+
