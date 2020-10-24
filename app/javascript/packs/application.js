@@ -24,47 +24,21 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "../plugins/flatpickr";
 
 
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 // Events
 
 document.addEventListener('turbolinks:load', () => {
+  initFlatpickr();
   initMapbox();
   initAutocomplete();
-  initSweetalert('#sweet-alert2', {
-  title: "Réservation confirmée",
-  text: "Votre plante arrivera bientôt chez vous !",
-  icon: "success",
-  iconColor: "#aac4b5",
-  button: "Top !",
-  closeOnClickOutside: false
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#booking-link');
-    link.click();
-  }
-});
-  initSweetalert('#sweet-alert', {
-  title: "Voulez-vous vraiment supprimer cette plante ?",
-  text: "Toute suppression est définitive",
-  icon: "warning",
-  iconColor: "#aac4b5",
-  buttons: ["Surtout pas !", "Sans regret :)"],
-  dangerMode: true,
-  className: "",
-  closeOnClickOutside: true
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#delete-link');
-    link.click();
-  }
-});
+  initSweetalert();
 })
 
 
