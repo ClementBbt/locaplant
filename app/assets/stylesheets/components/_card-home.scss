@@ -1,10 +1,13 @@
 .container-home {
   background: #136A55;
+  padding-top: 8px;
+  padding-bottom: 16px;
 }
 
 .container-home h2 {
   color: #ffffff;
-  padding: 16px;
+  padding-bottom: 8px;
+  // margin-top: 0px;
 }
 
 .container-home h3 {
@@ -12,26 +15,31 @@
   margin-top: 8px;
 }
 
-.container-home .myButton {
-  text-align: center;
-  width: 50px;
-  background-color: #ffffff;
-  color: #01260D;
-  text-shadow: none;
-  border:1px solid #aac4b5;
+.container-button {
   margin: 16px;
+  text-align: center;
+}
+
+// .myButton-home .myButton {
+//   text-align: center;
+//   width: 50px;
+//   background-color: #ffffff;
+//   color: #01260D;
+//   text-shadow: none;
+//   border:1px solid #aac4b5;
+//   margin: 16px;
+// }
+
+.card-plant-home-image {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .card-plant-home {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card-plant-home-banner {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
 }
 
 .card-plant-home h2 {
