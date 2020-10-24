@@ -68,7 +68,7 @@ nerium = Plant.new(
 name: "Nerium Oleander Villa Romaine",
 description: "Profitez de sa fleur simple, rose clair à gorge rose vif et ses feuilles sont persistantes vert sombre et coriaces.",
 price_per_day: 5,
-user_id: 3
+user: clement
 )
 nerium.photo.attach(io: file, filename: 'nerium.png', content_type: 'image/png')
 nerium.save!
@@ -78,7 +78,7 @@ phalaenopsis = Plant.new(
 name: "Phalaenopsis Multiflora",
 description: "La palette des coloris est très riche, du blanc pur à toutes les nuances de rose, ainsi que le mauve, l'orangé et le jaune.",
 price_per_day: 4,
-user_id: 3
+user: caroline
 )
 phalaenopsis.photo.attach(io: file, filename: 'phalaenopsis.png', content_type: 'image/png')
 phalaenopsis.save!
@@ -88,7 +88,7 @@ hydra = Plant.new(
 name: "Hydrangea panniculata 'Silver Dollar'",
 description: "Les fleurs vertes au départ devenant blanches et vertes prennent une jolie couleur rose cramoisi en automne.",
 price_per_day: 6,
-user_id: 1
+user: camille
 )
 hydra.photo.attach(io: file, filename: 'hydra.png', content_type: 'image/png')
 hydra.save!
@@ -98,7 +98,7 @@ ficus = Plant.new(
 name: "Joli petit bonsaï ficus",
 description: "Faites de votre petit salon Parisien une véritable jungle ! Les fleurs vertes au départ devenant blanches et vertes prennent une jolie couleur rose cramoisi en automne.",
 price_per_day: 4,
-user_id: 4
+user: arnaud
 )
 ficus.photo.attach(io: file, filename: 'ficus.png', content_type: 'image/png')
 ficus.save!
@@ -108,7 +108,7 @@ crassu = Plant.new(
 name: "Crassula, l'increvable",
 description: "Faites de votre petit salon Parisien une véritable jungle ! Cette plante n'est pas rustique. Elle demande une température minimum de +5°C. À hiverner au sec ( de 5°C à 15°C) Cultivez en pot cette plante succulente, au charme certain, avec son feuillage épais, vert ou gris-vert et sa belle floraison. Sortez-la, à l'extérieur, au soleil avec un léger ombrage, en été.",
 price_per_day: 5,
-user_id: 4
+user: clement
 )
 crassu.photo.attach(io: file, filename: 'crassu.png', content_type: 'image/png')
 crassu.save!
@@ -118,7 +118,7 @@ pachira = Plant.new(
 name: "Pachira aquatica, plus qu'un voyage...",
 description: "Une plante qui invite au voyage... Attention, si ses feuilles vous rappellent des voyages 'spirituels' elles ne sont pourtant pas comestibles... Cette plante n'est pas rustique. Elle demande une température minimum de +5°C. À hiverner au sec ( de 5°C à 15°C) Cultivez en pot cette plante succulente, au charme certain, avec son feuillage épais, vert ou gris-vert et sa belle floraison. Sortez-la, à l'extérieur, au soleil avec un léger ombrage, en été.",
 price_per_day: 4,
-user_id: 2
+user: clement
 )
 pachira.photo.attach(io: file, filename: 'pachira.png', content_type: 'image/png')
 pachira.save!
@@ -126,10 +126,10 @@ pachira.save!
 puts "Finished plants!"
 
 puts "Creating bookings..."
-Booking.create!( user: User.find_by(first_name: "Clement"), plant_id: 6, start_date: "2020/10/10/", end_date: "2020/10/22" )
-Booking.create!( user: User.find_by(first_name: "Clement"), plant_id: 3, start_date: "2020/09/02", end_date: "2020/09/08" )
-Booking.create!( user: User.find_by(first_name: "Clement"), plant_id: 6, start_date: "2019/09/02", end_date: "2019/09/25" )
-Booking.create!( user: User.find_by(first_name: "Clement"), plant_id: 5, start_date: "2018/08/02", end_date: "2020/08/08" )
+Booking.create!( user: clement, plant: ficus, start_date: "2020/10/10/", end_date: "2020/10/22" )
+Booking.create!( user: clement, plant: hydra, start_date: "2020/09/02", end_date: "2020/09/08" )
+Booking.create!( user: clement, plant: phalaenopsis, start_date: "2019/09/02", end_date: "2019/09/25" )
+Booking.create!( user: clement, plant: hydra, start_date: "2018/08/02", end_date: "2020/08/08" )
 puts "Finished!"
 
 
