@@ -20,6 +20,7 @@
               <p class="lighter"><em>Plante proposée par <%= booking.plant.user.first_name %></em></p>
               <p><%= booking.plant.description.truncate(80) %></p>
               <p class="date"><i class="far fa-calendar-alt"></i> <%= booking.start_date %> - <%= booking.end_date %></p>
+              <p id="price">Loué pour <%= booking.total_price %>€</p>
             </div>
           </div>
       <% end %>
