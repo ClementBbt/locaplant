@@ -1,7 +1,7 @@
 .container-home {
   background: #136A55;
-  padding-top: 8px;
-  padding-bottom: 16px;
+  padding-top: 16px;
+  padding-bottom: 100px;
 }
 
 .container-home h2 {
@@ -20,15 +20,15 @@
   text-align: center;
 }
 
-// .myButton-home .myButton {
-//   text-align: center;
-//   width: 50px;
-//   background-color: #ffffff;
-//   color: #01260D;
-//   text-shadow: none;
-//   border:1px solid #aac4b5;
-//   margin: 16px;
-// }
+ .container-button .myButton {
+   text-align: center;
+   width: 50px;
+   background-color: #ffffff;
+   color: #01260D;
+   text-shadow: none;
+   border:1px solid #aac4b5;
+   margin: 16px;
+ }
 
 .card-plant-home-image {
   height: 220px;
