@@ -27,9 +27,9 @@
     </div>
 
     <div class="w-50 p-4 text-center">
-      <h2>Nous assurons vos arrières, pour vous rassurer!</h2>
+      <h2>Pourquoi louer des plantes sur Locaplant ?</h2>
 
-      <p>Afin d'assurer la sécurité de vos plantes, nous offrons pour chaque réservation une protection contre les dommages matériels à hauteur de 1 million d'Euros</p>
+      <p>Grace à Locaplant vous pouvez végétaliser votre intérieur à moindre frais et essayer de nombreuses plantes pour voir lesquelles sont en harmonie avec votre décoration avant d’envisager un achat.</p>
     </div>
   </div>
 </div>
@@ -42,11 +42,13 @@
       <% @plants.last(3).each do |plant| %>
         <%= link_to plant_path(plant) do %>
           <div class="card-plant-home">
-            <% if plant.photo.attached? %>
-              <%= cl_image_tag plant.photo.key %>
-            <% else %>
-              <img class="card-plant-home-banner" src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" />
-            <% end %>
+            <!-- <div class="card-plant-home-image"> -->
+              <% if plant.photo.attached? %>
+                <%= cl_image_tag plant.photo.key, class: "card-plant-home-image"%>
+              <% else %>
+                <img class="card-plant-home-image" src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" />
+              <% end %>
+            <!-- </div> -->
             <div class="card-plant-home-infos">
               <div>
                 <h3><%= plant.name.truncate(25) %></h3>
@@ -61,7 +63,12 @@
         <% end %>
       <% end %>
     </div>
-    <!-- VOIR PLUS -->
-    <a href="#" class="myButton w-100">Voir plus</a>
+  </div>
+</div>
+
+<!-- VOIR PLUS -->
+<div class="container">
+  <div class="container-button">
+    <a href="#" class="myButton w-50">Voir plus</a>
   </div>
 </div>
