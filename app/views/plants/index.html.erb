@@ -21,6 +21,7 @@
             <h2><%= plant.name.truncate(50) %></h2>
             <p class="lighter"><em>Plante proposée par <%= plant.user.first_name %></em></p>
             <p><%= plant.description.truncate(80) %></p>
+            <p id="price"><%= plant.price_per_day %>€ / jour</p>
           </div>
         </div>
       <% end %>

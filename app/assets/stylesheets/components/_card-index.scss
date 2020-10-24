@@ -1,8 +1,8 @@
-// Map
+// Product card
 
 .card-product {
   overflow: hidden;
-  height: 150px;
+  height: 160px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -12,7 +12,7 @@
 
 .card-product img {
   height: 100%;
-  width: 160px;
+  width: 165px;
   object-fit: cover;
 }
 
@@ -38,6 +38,11 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+#price {
+  color: #aac4b5;
+  font-weight: 500;
 }
 
 // Map for index
