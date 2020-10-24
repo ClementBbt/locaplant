@@ -1,21 +1,27 @@
 
 <div class="card-category mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1518607692857-bff9babd9d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80")>
-  <h1>Tous mes bookings</h1>
+  <h1>Toutes mes réservations</h1>
 </div>
-<div class="container d-flex justify-content-between">
-<% @bookings.each do |booking| %>
-<div class="card-booking">
-  <%= cl_image_tag booking.plant.photo.key %>
-  <div class="card-booking-infos">
-    <h2><%= link_to booking.plant.name, plant_path(booking.plant) %></h2>
-    <p><%= booking.start_date %></p>
-    <p><%= booking.end_date %></p>
+
+
+<div class="container">
+  <div class="container-card-bookings">
+    <% @bookings.each do |booking| %>
+      <%= link_to "lien vers plant", plant_path(booking.plant) do %>
+        <div class="card-bookings">
+          <% if booking.plant.photo.attached? %>
+                <%= cl_image_tag booking.plant.photo.key %>
+          <% else %>
+              <img src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" />
+          <% end %>
+          <div class="card-bookings-infos">
+            <h2><%= booking.plant.name.truncate(50) %></h2>
+            <p class="lighter"><em>Plante proposée par <%= booking.plant.user.first_name %></em></p>
+            <p><%= booking.plant.description.truncate(80) %></p>
+            <p class="date"><i class="far fa-calendar-alt"></i> <%= booking.start_date %> - <%= booking.end_date %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
-<% end %>
-</div>
-
-
-
-
-
