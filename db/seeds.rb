@@ -9,36 +9,129 @@ require "open-uri"
 
 puts "Cleaning database..."
 User.destroy_all
+Plant.destroy_all
+Booking.destroy_all
+
 
 puts "Creating users..."
-jean_eymard = { first_name: "Jean", id:1, last_name: "Eymard", email: "jean.eymard@gmail.com", password: "test123", address: "41 rue popincourt, 75011, Paris" }
-anne_heantie =  { first_name: "Anne", id:2, last_name: "Héantie", email: "anne.heantie@gmail.com", password: "test321", address: "85 rue des Pyrénées, 75020, Paris" }
-clement_bibolet = { first_name: "Clement", id:3, last_name: "Bibolet", email: "clement@test.com", password: "test321", address: "36 rue Chaptal, 92300, Levallois-Perret" }
 
-[ jean_eymard, anne_heantie, clement_bibolet ].each do |attributes|
-  user = User.create!(attributes)
-  puts "Created #{user.first_name}"
-end
+file = URI.open('https://avatars3.githubusercontent.com/u/46726561?s=60&u=0220bde2b8e3e990aabc64041748d16b4e3c5777&v=4')
+caroline = User.new(
+first_name: "Caroline",
+last_name: "Karpiel",
+email: "caroline@test.com",
+password: "test321",
+address: "41 rue popincourt, 75011, Paris",
+)
+caroline.photo.attach(io: file, filename: 'caroline.png', content_type: 'image/png')
+caroline.save!
+
+file = URI.open('https://avatars0.githubusercontent.com/u/65772685?s=460&u=19842663fa4b75c28caf632b120957e3dfdb2f97&v=4')
+camille = User.new(
+first_name: "Camille",
+last_name: "Subtil",
+email: "camille@test.com",
+password: "test321",
+address: "2 villa Gaudelet, 75011, Paris",
+)
+camille.photo.attach(io: file, filename: 'camille.png', content_type: 'image/png')
+camille.save!
+
+file = URI.open('https://avatars3.githubusercontent.com/u/63556423?s=460&u=fd79c26bca3aead73759c01c5f950bedb9e9b3a8&v=4')
+clement = User.new(
+first_name: "Clement",
+last_name: "Bibolet",
+email: "clement@test.com",
+password: "test321",
+address: "36 rue chaptal, 92300, Levallois-Perret",
+)
+clement.photo.attach(io: file, filename: 'clement.png', content_type: 'image/png')
+clement.save!
+
+file = URI.open('https://avatars3.githubusercontent.com/u/25386941?s=460&u=84af91df946b5ebcf29aa45a2536f845831da56d&v=4')
+arnaud = User.new(
+first_name: "Arnaud",
+last_name: "Wagon",
+email: "arnaud@test.com",
+password: "test321",
+address: "2 Rue Duranti, 75011, Paris",
+)
+arnaud.photo.attach(io: file, filename: 'arnaud.png', content_type: 'image/png')
+arnaud.save!
+
+puts "Finished users!"
 
 puts "Creating plants..."
-bonsai_ficus = { user: User.all.sample, name: "Joli petit bonsaï ficus", description: "Faites de votre petit salon Parisien une véritable jungle !", price_per_day: 2 }
-crassula =  { user: User.all.sample, name: "Crassula, l'increvable", description: "Toujours verte avec peu d'entretien, elle est adaptée à ceux qui n'ont pas la main verte !", price_per_day: 3 }
-pachira = { user: User.all.sample, name: "Pachira aquatica, plus qu'un voyage...", description: "Une plante qui invite au voyage... Attention, si ses feuilles vous rappellent des voyages 'spirituels' elles ne sont pourtant pas comestibles...", price_per_day: 3 }
 
-images = ['https://images.unsplash.com/photo-1526397751294-331021109fbd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80', 'https://images.unsplash.com/photo-1511971532930-9d589f9e3a82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1648&q=80', 'https://images.unsplash.com/photo-1511406818640-48d788a5c870?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1063&q=80']
-[ bonsai_ficus, crassula, pachira ].each do |attributes|
-  file = URI.open(images.sample)
-  plant = Plant.new(attributes)
-  plant.photo.attach(io: file, filename: 'plant.png', content_type: 'image/png')
-  plant.save!
-  puts "Created #{plant.name}"
-end
-puts "Finished!"
+file = URI.open('https://images.unsplash.com/photo-1571229721124-b883163bd33c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=664&q=80')
+nerium = Plant.new(
+name: "Nerium Oleander Villa Romaine",
+description: "Profitez de sa fleur simple, rose clair à gorge rose vif et ses feuilles sont persistantes vert sombre et coriaces.",
+price_per_day: 5,
+user_id: 3
+)
+nerium.photo.attach(io: file, filename: 'nerium.png', content_type: 'image/png')
+nerium.save!
+
+file = URI.open('https://images.unsplash.com/photo-1592592962756-696ffbf5d6fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2775&q=80')
+phalaenopsis = Plant.new(
+name: "Phalaenopsis Multiflora",
+description: "La palette des coloris est très riche, du blanc pur à toutes les nuances de rose, ainsi que le mauve, l'orangé et le jaune.",
+price_per_day: 4,
+user_id: 3
+)
+phalaenopsis.photo.attach(io: file, filename: 'phalaenopsis.png', content_type: 'image/png')
+phalaenopsis.save!
+
+file = URI.open('https://images.unsplash.com/photo-1523820084935-cfd4aecd5b02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
+hydra = Plant.new(
+name: "Hydrangea panniculata 'Silver Dollar'",
+description: "Les fleurs vertes au départ devenant blanches et vertes prennent une jolie couleur rose cramoisi en automne.",
+price_per_day: 6,
+user_id: 1
+)
+hydra.photo.attach(io: file, filename: 'hydra.png', content_type: 'image/png')
+hydra.save!
+
+file = URI.open('https://images.unsplash.com/photo-1597451407304-840ff7a12864?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1659&q=80')
+ficus = Plant.new(
+name: "Joli petit bonsaï ficus",
+description: "Faites de votre petit salon Parisien une véritable jungle ! Les fleurs vertes au départ devenant blanches et vertes prennent une jolie couleur rose cramoisi en automne.",
+price_per_day: 4,
+user_id: 4
+)
+ficus.photo.attach(io: file, filename: 'ficus.png', content_type: 'image/png')
+ficus.save!
+
+file = URI.open('https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=788&q=80')
+crassu = Plant.new(
+name: "Crassula, l'increvable",
+description: "Faites de votre petit salon Parisien une véritable jungle ! Cette plante n'est pas rustique. Elle demande une température minimum de +5°C. À hiverner au sec ( de 5°C à 15°C) Cultivez en pot cette plante succulente, au charme certain, avec son feuillage épais, vert ou gris-vert et sa belle floraison. Sortez-la, à l'extérieur, au soleil avec un léger ombrage, en été.",
+price_per_day: 5,
+user_id: 4
+)
+crassu.photo.attach(io: file, filename: 'crassu.png', content_type: 'image/png')
+crassu.save!
+
+file = URI.open('https://images.unsplash.com/photo-1585919502021-960a93e258d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80')
+pachira = Plant.new(
+name: "Pachira aquatica, plus qu'un voyage...",
+description: "Une plante qui invite au voyage... Attention, si ses feuilles vous rappellent des voyages 'spirituels' elles ne sont pourtant pas comestibles... Cette plante n'est pas rustique. Elle demande une température minimum de +5°C. À hiverner au sec ( de 5°C à 15°C) Cultivez en pot cette plante succulente, au charme certain, avec son feuillage épais, vert ou gris-vert et sa belle floraison. Sortez-la, à l'extérieur, au soleil avec un léger ombrage, en été.",
+price_per_day: 4,
+user_id: 2
+)
+pachira.photo.attach(io: file, filename: 'pachira.png', content_type: 'image/png')
+pachira.save!
+
+puts "Finished plants!"
 
 puts "Creating bookings..."
-Booking.create!( user: User.find_by(first_name: "Clement"), plant: Plant.all.sample, start_date: "2020/10/10/", end_date: "2020/10/22" )
-Booking.create!( user: User.find_by(first_name: "Clement"), plant: Plant.all.sample, start_date: "2020/09/02", end_date: "2020/09/08" )
+Booking.create!( user: User.find_by(first_name: "Clement"), plant_id: 6, start_date: "2020/10/10/", end_date: "2020/10/22" )
+Booking.create!( user: User.find_by(first_name: "Clement"), plant_id: 3, start_date: "2020/09/02", end_date: "2020/09/08" )
+Booking.create!( user: User.find_by(first_name: "Clement"), plant_id: 6, start_date: "2019/09/02", end_date: "2019/09/25" )
+Booking.create!( user: User.find_by(first_name: "Clement"), plant_id: 5, start_date: "2018/08/02", end_date: "2020/08/08" )
 puts "Finished!"
+
 
 
 
